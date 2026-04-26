@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(242, 242, 242);
+  overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.grid-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.column {
+  height: 100vh;
+  overflow-y: scroll;
+
+  /* 선 색 변경 */
+  border-right: 0.5px solid rgb(230, 230, 230);
+
+  padding: 24px;
+  font-size: 20px;
+}
+
+/* 마지막 칸 오른쪽 선 제거 */
+.column:last-child {
+  border-right: none;
+}
+
+/* 스크롤 확인용 */
+.column::after {
+  content: "";
+  display: block;
+  height: 200vh;
+}
